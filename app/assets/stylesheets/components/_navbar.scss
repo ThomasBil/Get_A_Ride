@@ -7,6 +7,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 70px;
+  position: sticky;
+  z-index: 1;
+  top: 0px;
 }
 
 .nav-content {
@@ -23,21 +26,5 @@ header {
         color: #44cf6c;
       }
     }
-  }
-}
-
-
-.btn-login {
-  background-color: #44cf6c;
-  font-size: 16px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 10px 30px;
-  text-decoration: none;
-  color: white;
-  &:hover {
-    text-decoration: none;
-    color: white;
   }
 }
