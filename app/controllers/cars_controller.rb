@@ -37,6 +37,10 @@ class CarsController < ApplicationController
     redirect_to cars_path
   end
 
+  def mycars
+    @cars = Car.where(user:current_user)
+  end
+
   private
 
   def car_params
