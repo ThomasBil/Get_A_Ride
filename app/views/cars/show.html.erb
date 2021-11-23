@@ -1,10 +1,34 @@
-<h1>CAR ID</h1>
+<header style="background-color: rgb(82, 171, 146);">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="logo du wagon" class="logo-wagon">
+  <nav>
+    <ul class="nav-content">
+      <li><%= link_to('Cars', cars_path) %></li>
+      <li><%= link_to('Add a car', new_car_path)  %></li>
+      <li><%= link_to('My cars', allmycars_path)  %></li>
+      <li><%= link_to('Return', cars_path)  %></li>
 
-<ul>
-    <td><%= @car.brand %></td>
-    <% if @car.user_id == current_user.id %>
-      <td><%= link_to('Edit', edit_car_path(@car)) %></td>
-      <td><%= link_to('Destroy', car_path, method: :delete, data: { confirm: 'Are you sure?' }) %></td>
-    <% end %>
-    <%= link_to('Return', cars_path)  %>
-</ul>
+    </ul>
+  </nav>
+  <a href="#" class="btn-login">Login</a>
+</header>
+
+
+
+  <div class="cards">
+      <div class="card-trip">
+          <img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= @car.brand %></h2>
+              <p><%= @car.details %>Short description here!</p>
+            </div>
+            <h2 class="card-trip-pricing"><%= @car.price_per_day %>€/day</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+      </div>
+  </div>
+
+  <% if @car.user_id == current_user.id %>
+    <td><%= link_to('Edit', edit_car_path(@car)) %></td>
+    <td><%= link_to('Destroy', car_path, method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+  <% end %>
