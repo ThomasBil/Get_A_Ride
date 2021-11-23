@@ -1,11 +1,18 @@
 <h1>ALL MY CARS</h1>
-
-<ul>
+<div class="car-cards">
   <% @cars.each do |car| %>
-  <li>
-      <%= link_to(car.brand, car_path(car)) %>
-  </li>
+    <div class="car-card">
+      <img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs">
+      <div class="card-car-title">
+        <h3><%= car.brand %></h3>
+        <p><%= car.price_per_day %>€/day</p>
+      </div>
+      <div class="card-car-content">
+        <p><%= car.details %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
 
 <%= link_to('Add a car', new_car_path)  %>

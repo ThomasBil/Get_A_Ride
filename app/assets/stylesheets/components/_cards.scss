@@ -1,0 +1,35 @@
+.car-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
+.car-card {
+  height: 450px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-car-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  p {
+    margin: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  // background-color: red;
+}
+
+.card-car-content {
+  // background-color: blue;
+  padding: 0 15px;
+}
