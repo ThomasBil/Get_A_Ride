@@ -1,15 +1,40 @@
-<%= form_for(@car) do |f| %>
-
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
-  <%= f.label :price_per_day %>
-  <%= f.number_field :price_per_day %>
-  <%= f.label :immatriculation %>
-  <%= f.text_field :immatriculation %>
-  <%= f.label :localisation %>
-  <%= f.text_field :localisation %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-
-  <%= f.submit %>
-<% end %>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 md-6 col-lg-4">
+      <%= simple_form_for(@car) do |f| %>
+        <h2 class="text-center mb-5">Create a new car</h2>
+          <div>
+            <%= f.label :brand %>
+          </div>
+          <div>
+            <%= f.text_field :brand %>
+          </div>
+          <div>
+            <%= f.label :price_per_day %>
+          </div>
+          <div>
+            <%= f.number_field :price_per_day %>
+          </div>
+          <div>
+            <%= f.label :immatriculation %>
+          </div>
+          <div>
+            <%= f.text_field :immatriculation %>
+          </div>
+          <div>
+            <%= f.label :localisation %>
+          </div>
+          <div>
+            <%= f.text_field :localisation %>
+          </div>
+          <div>
+            <%= f.label :details %>
+          </div>
+          <div>
+            <%= f.text_field :details %>
+          </div>
+          <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
