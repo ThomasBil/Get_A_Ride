@@ -13,20 +13,36 @@
 </header>
 
 
+<div class="main_container">
 
-  <div class="cards">
-      <div class="card-trip">
-          <img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= @car.brand %></h2>
-              <p><%= @car.details %>Short description here!</p>
-            </div>
-            <h2 class="card-trip-pricing"><%= @car.price_per_day %>€/day</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-          </div>
-      </div>
+  <div class= "galery_pictures">
+    <div class="item"><img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" /></div>
+    <div class="item"><img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" /></div>
+    <div class="item"><img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" /></div>
+    <div class="item"><img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" /></div>
+    <div class="item"><img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" /></div>
+    <div class="item"><img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" /></div>
   </div>
+
+  <div class="description">
+    <h2 class="fw-bold">Brand of the car</h2>
+      <h3 class="fs-3 fw-light"><%= @car.brand %></h3>
+    <h2 class="fw-bold">Price of the rent</h2>
+      <h3 class="fs- fw-light"><%= @car.price_per_day %> € /day</h3>
+    <h2 class="fw-bold">Localisation</h2>
+      <h3 class="fs-3 fw-light"><%= @car.localisation %></h3>
+    <h2 class="fw-bold">Immatriculation</h2>
+      <h3 class="fs-3 fw-light"><%= @car.immatriculation %></h3>
+    <h2 class="fw-bold">Détails</h2>
+      <h3 class="fs-3 fw-light"><%= @car.details %></h3>
+  </div>
+
+  <div class="calendar">
+  <img src="https://icalendrier.fr/media/imprimer/2021/mensuel/decembre/calendrier-decembre-2021.png" alt="calendrier">
+  </div>
+
+</div>
+
 
   <% if @car.user_id == current_user.id %>
     <td><%= link_to('Edit', edit_car_path(@car)) %></td>
