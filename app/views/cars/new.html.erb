@@ -1,15 +1,23 @@
-<%= form_for(@car) do |f| %>
-
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
-  <%= f.label :price_per_day %>
-  <%= f.number_field :price_per_day %>
-  <%= f.label :immatriculation %>
-  <%= f.text_field :immatriculation %>
-  <%= f.label :localisation %>
-  <%= f.text_field :localisation %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-
-  <%= f.submit %>
-<% end %>
+<div class="banner">
+  <header style="background-color: rgba(0,0,0,0.0);">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="logo du wagon" class="logo-wagon">
+    <nav>
+      <ul class="nav-content">
+        <li><%= link_to('Cars', cars_path) %></li>
+        <li><a href="#">Bookings</a></li>
+        <li><a href="#">Became an owner</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn-login">Login</a>
+  </header>
+  <div class="my-custom-container py-5">
+    <div class="container-form">
+      <div class="row justify-content-center ">
+        <div class="col-12 col-lg-6">
+          <h2 class="text-justify font-weight-bold mt-3">Create a new car</h2>
+          <%= render 'form', cars: @cars %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
