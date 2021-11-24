@@ -22,6 +22,10 @@ class BookingsController < ApplicationController
     redirect_to root, notice: 'Garden was successfully destroyed.'
   end
 
+  def my_bookings
+    @bookings = Booking.where(user:current_user)
+  end
+
   private
 
   def bookings_params
