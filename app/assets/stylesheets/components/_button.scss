@@ -9,6 +9,19 @@
   color: white;
   &:hover {
     text-decoration: none;
-    color: white;
+    color: #1fb148;
+  }
+}
+
+.btn-shop {
+  text-decoration: none;
+  color: white;
+  background-color: #44cf6c;
+  letter-spacing: 2px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  &:hover {
+    text-decoration: none;
+    color: #1fb148;
   }
 }
