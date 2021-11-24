@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-   def create
+  def create
     @car = Car.find(params[:car_id])
     @booking = Booking.new(bookings_params)
     @user = current_user
