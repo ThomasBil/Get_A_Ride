@@ -1,10 +1,65 @@
-<h1>CAR ID</h1>
+<header style="background-color: rgb(82, 171, 146);">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="logo du wagon" class="logo-wagon">
+  <nav>
+    <ul class="nav-content">
+      <li><%= link_to('Cars', cars_path) %></li>
+      <li><%= link_to('Add a car', new_car_path)  %></li>
+      <li><%= link_to('My cars', allmycars_path)  %></li>
+      <li><%= link_to('Return', cars_path)  %></li>
 
-<ul>
-    <td><%= @car.brand %></td>
-    <% if @car.user_id == current_user.id %>
-      <td><%= link_to('Edit', edit_car_path(@car)) %></td>
-      <td><%= link_to('Destroy', car_path, method: :delete, data: { confirm: 'Are you sure?' }) %></td>
-    <% end %>
-    <%= link_to('Return', cars_path)  %>
-</ul>
+    </ul>
+  </nav>
+  <a href="#" class="btn-login">Login</a>
+</header>
+
+
+<div class="main_container">
+
+  <div class= "galery_pictures">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";>
+)";>
+            <div class="swiper-slide-content">
+              <h1><%= @car.brand %></h1>
+              <a href="#" class="btn-shop">Louer</a>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://www.turbo.fr/sites/default/files/styles/article_690x405/public/2019-03/voiture-occasion-verification-int%C3%A9rieur.png?itok=WRPkDjfN)";>
+            <div class="swiper-slide-content">
+            </div>
+          </div>
+        </div>
+        <%# <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> %>
+        <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+
+  <div class="description">
+    <h2 class="fw-bold">Brand of the car</h2>
+      <h3 class="fs-3 fw-light"><%= @car.brand %></h3>
+    <h2 class="fw-bold">Price of the rent</h2>
+      <h3 class="fs- fw-light"><%= @car.price_per_day %> € /day</h3>
+    <h2 class="fw-bold">Localisation</h2>
+      <h3 class="fs-3 fw-light"><%= @car.localisation %></h3>
+    <h2 class="fw-bold">Immatriculation</h2>
+      <h3 class="fs-3 fw-light"><%= @car.immatriculation %></h3>
+    <h2 class="fw-bold">Détails</h2>
+      <h3 class="fs-3 fw-light"><%= @car.details %></h3>
+  </div>
+
+  <div class="calendar">
+  <img src="https://icalendrier.fr/media/imprimer/2021/mensuel/decembre/calendrier-decembre-2021.png" alt="calendrier">
+  </div>
+
+</div>
+
+
+<% if current_user != nil %>
+  <% if @car.user_id == current_user.id %>
+    <td><%= link_to('Edit', edit_car_path(@car)) %></td>
+    <td><%= link_to('Destroy', car_path, method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+  <% end %>
+<% end %>
