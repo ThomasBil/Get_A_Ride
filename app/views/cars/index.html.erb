@@ -1,19 +1,36 @@
-<h1>ALL MY CARS</h1>
-<div class="car-cards">
+<header style="background-color: rgb(82, 171, 146);">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="logo du wagon" class="logo-wagon">
+  <nav>
+    <ul class="nav-content">
+      <li><%= link_to('Cars', cars_path) %></li>
+      <li><%= link_to('Add a car', new_car_path)  %></li>
+      <li><%= link_to('My cars', allmycars_path)  %></li>
+    </ul>
+  </nav>
+  <a href="#" class="btn-login">Login</a>
+</header>
+
+
+<div class="container mt-5">
+
+
+  <div class="cards">
   <% @cars.each do |car| %>
-    <div class="car-card">
-      <img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs">
-      <div class="card-car-title">
-        <h3><%= car.brand %></h3>
-        <p><%= car.price_per_day %>€/day</p>
+      <%= link_to car_path(car), class:"link_to" do %>
+      <div class="card-trip">
+          <img src="https://storage.googleapis.com/benzin/lead/original/img_619bbeb0ec726.jpg" alt="megane rs" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= car.brand %></h2>
+              <p><%= car.details %>Short description here!</p>
+            </div>
+            <h2 class="card-trip-pricing"><%= car.price_per_day %>€/day</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
       </div>
-      <div class="card-car-content">
-        <p><%= car.details %></p>
-      </div>
-    </div>
-  <% end %>
+      <% end  %>
+    <% end %>
+  </div>
+
+
 </div>
-
-
-<%= link_to('Add a car', new_car_path)  %>
-<%= link_to('My cars', allmycars_path)  %>
