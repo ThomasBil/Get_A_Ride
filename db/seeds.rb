@@ -19,15 +19,15 @@ thomas = User.create!(name: "Thomas", email: "thomas@lewagon.fr", phone_number: 
 
 puts "#{User.count} users created"
 
-car_1 = Car.new(brand: "Audi", price_per_day: 100, localisation: "Lille", immatriculation: "129EM76", details: "Une envie de F1 pour tous les jours ? Qui mieux que Renault pour vous l'offrir ? Produite uniquement en 2012 pour célébrer le partenariat en F1 de Renault avec Redbull, la RB7 offre une livrée spécifique, le châssis Cup et d'autres équipements comme le RS Monitor. Alors à vos enchères, car ce bel exemplaire n’attend plus que vous.")
+car_1 = Car.new(brand: "Audi", price_per_day: 100, localisation: "Lille", immatriculation: "129EM76", details: "Sportive car")
 car_1.user = nassim
 car_1.save!
 
-car_2 = Car.new(brand: "BMW", price_per_day: 80, localisation: "Paris", immatriculation: "111EM11", details: "sportive car")
+car_2 = Car.new(brand: "BMW", price_per_day: 80, localisation: "Paris", immatriculation: "111EM11", details: "Sportive car")
 car_2.user = nabila
 car_2.save!
 
-car_3 = Car.new(brand: "Renaud", price_per_day: 50, localisation: "Lille", immatriculation: "546TG64", details: "family car")
+car_3 = Car.new(brand: "Renaud", price_per_day: 50, localisation: "Lille", immatriculation: "546TG64", details: "Family car")
 car_3.user = thomas
 car_3.save!
 

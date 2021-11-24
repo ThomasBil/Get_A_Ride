@@ -12,8 +12,9 @@
   grid-row: 1 / 5;
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
-  box-shadow: 3px -1px 15px 5px rgba(107,107,107,0.3);
+  box-shadow: 6px -1px 15px 5px rgba(107,107,107,0.3);
   padding: 20px;
+  margin-top: 50px;
 }
 
 
@@ -22,7 +23,6 @@
   grid-row: 1/2;
   height: 450px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
