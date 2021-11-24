@@ -1,5 +1,6 @@
-.logo-wagon {
-  width: 40px;
+.logo {
+  width: 80px;
+  height: 80px;
 }
 
 header {
@@ -21,9 +22,9 @@ header {
     text-transform: uppercase;
     a {
       text-decoration: none;
-      color: white;
+      color: #1B1B1B;
       &:hover {
-        color: #44cf6c;
+        color: #E94759;
       }
     }
   }

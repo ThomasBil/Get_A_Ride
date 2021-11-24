@@ -1,14 +1,15 @@
-<header style="background-color: rgb(82, 171, 146);">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="logo du wagon" class="logo-wagon">
-  <nav>
-    <ul class="nav-content">
-      <li><%= link_to('Cars', cars_path) %></li>
-      <li><%= link_to('Add a car', new_car_path)  %></li>
-      <li><%= link_to('My cars', allmycars_path)  %></li>
-    </ul>
-  </nav>
-  <a href="#" class="btn-login">Login</a>
+  <header style="background-color: rgba(0,0,0,0.0);">
+    <%= link_to(image_tag("logo.png", alt: "logo du wagon", class:"logo"), root_path) %>
+    <nav>
+      <ul class="nav-content">
+        <li><%= link_to('Louer une voiture', cars_path) %></li>
+        <li><%= link_to('Mettre en location', new_car_path)  %></li>
+        <li><%= link_to('Vos voitures', allmycars_path)  %></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn-login">Login</a>
 </header>
+
 
 
 <div class="container mt-5">
