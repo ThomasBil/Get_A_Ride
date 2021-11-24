@@ -1,0 +1,30 @@
+.container-form {
+  width: 75%;
+  border-radius: 30px;
+  widows: 10px 5px 5px;
+  background-color: rgba(255, 255, 253, 0.747);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .my-custom-container{
+        width:600px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .my-custom-container{
+      width:720px;
+      margin: 0 auto;
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .my-custom-container{
+      width:900px;
+      margin: 0 auto;
+
+    }
+}
