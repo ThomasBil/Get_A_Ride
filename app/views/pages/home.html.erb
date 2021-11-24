@@ -8,7 +8,7 @@
         <li><%= link_to('My cars', allmycars_path)  %></li>
       </ul>
     </nav>
-    <a href="#" class="btn-login">Login</a>
+    <%= link_to "Login", new_user_session_path , class: "btn-login"%>
   </header>
 
   <div class="swiper mySwiper">
