@@ -18,12 +18,15 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to root, notice: 'Garden was successfully destroyed.'
+    redirect_to allmybookings_path, notice: 'Bookings was successfully canceled.'
   end
 
   def my_bookings
-    @bookings = Booking.where(user:current_user)
+    @bookings_from = Booking.where(user:current_user)
+    @my_cars = Car.where(user:current_user)
+    @bookings_for = @my_cars.map { |car| car.bookings }
   end
 
   private
