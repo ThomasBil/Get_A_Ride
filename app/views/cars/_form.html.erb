@@ -19,6 +19,10 @@
     <%= f.label :details %>
     <%= f.text_field :details %>
   </div>
+  <div>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  </div>
   <%= f.button :submit, class: "btn btn-primary m-4"%>
 
 <% end %>
+  
