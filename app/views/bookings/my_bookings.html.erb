@@ -7,6 +7,6 @@
 
 <% @my_cars.each do |car| %>
  <% car.bookings.each do |booking| %>
-  <p><%= booking.user.name %> <%= booking.status %></p> 
+  <p><%= booking.user.name %> <%= booking.status %> <%= link_to "Accept", accept_path(booking), method: :patch %> <%= link_to "Decline", decline_path(booking), method: :patch %></p>
  <% end %>
 <% end %>

@@ -26,7 +26,22 @@ class BookingsController < ApplicationController
   def my_bookings
     @bookings_i_want = Booking.where(user:current_user)
     @my_cars = Car.where(user:current_user)
-    # @bookings_for = @my_cars.map { |car| car.bookings }
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accept"
+    if @booking.save
+      redirect_to allmybookings_path
+    end
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "Decline"
+    if @booking.save
+      redirect_to allmybookings_path
+    end
   end
 
   private
