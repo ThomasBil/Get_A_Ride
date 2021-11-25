@@ -49,3 +49,28 @@
   <% end %>
   <td><%= link_to('Reserve this car', new_car_booking_path(@car)) %></td>
 <% end %>
+
+
+
+
+
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2>Book a Car</h2>
+    <%= simple_form_for [@car, @booking] do |f| %>
+      <%= f.input :start_date, label: "Sélectionnez vos dates:",
+                               as: :string,
+                               required: false,
+                               input_html: { id: "range_start", class: "d-none" } %>
+      <%= f.input :end_date, label: false,
+                             as: :string,
+                             required: false,
+                             input_html: { id: "range_end", class: "d-none" } %>
+      <%= f.button :submit, "Book", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<div id="booking-form-div"
+     data-bookings="<%= @bookings_dates.to_json %>">
+</div>
