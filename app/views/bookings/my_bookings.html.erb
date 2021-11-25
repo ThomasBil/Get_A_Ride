@@ -1,7 +1,7 @@
 <h1>work</h1>
 
 <% @bookings_i_want.each do |booking| %>
-  <p><%= booking.car.brand %> <%= link_to "Destroy", booking_path(booking), method: :delete %></p>
+  <p><%= "#{booking.car.brand} #{booking.car.model}" %> <%= link_to "Cancel", booking_path(booking), method: :delete %></p>
 <% end %>
 
 
