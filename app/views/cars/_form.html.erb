@@ -3,11 +3,15 @@
     <%= f.label :brand %>
     <%= f.text_field :brand %>
   </div>
+   <div class = "col-6 ">
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
   <div class = "col-6 ">
     <%= f.label :price_per_day %>
     <%= f.number_field :price_per_day %>
   </div>
-  <div class = "col-6 ">
+  <div class = "col-8 ">
     <%= f.label :immatriculation %>
     <%= f.text_field :immatriculation %>
   </div>
@@ -19,6 +23,11 @@
     <%= f.label :details %>
     <%= f.text_field :details %>
   </div>
-  <%= f.button :submit, class: "btn btn-primary m-4"%>
+  <div class = "col-12">
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  </div>
+  <div class = "col-8" >
+    <%= f.button :submit, class: "btn btn-primary m-4"%>
+  </div>
 
 <% end %>
