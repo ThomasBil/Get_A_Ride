@@ -24,9 +24,9 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @bookings_from = Booking.where(user:current_user)
+    @bookings_i_want = Booking.where(user:current_user)
     @my_cars = Car.where(user:current_user)
-    @bookings_for = @my_cars.map { |car| car.bookings }
+    # @bookings_for = @my_cars.map { |car| car.bookings }
   end
 
   private

@@ -1,5 +1,12 @@
 <h1>work</h1>
 
-<% @bookings_from.each do |booking| %>
+<% @bookings_i_want.each do |booking| %>
   <p><%= booking.car.brand %> <%= link_to "Destroy", booking_path(booking), method: :delete %></p>
+<% end %>
+
+
+<% @my_cars.each do |car| %>
+ <% car.bookings.each do |booking| %>
+  <p><%= booking.user.name %> <%= booking.status %></p> 
+ <% end %>
 <% end %>
