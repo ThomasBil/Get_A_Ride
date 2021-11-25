@@ -1,21 +1,4 @@
 <div class="banner">
-
-  <header style="background-color: rgba(0,0,0,0.0);">
-    <%= link_to(image_tag("logo.png", alt: "logo du wagon", class:"logo"), root_path) %>
-    <nav>
-      <ul class="nav-content">
-        <li><%= link_to('Louer', cars_path) %></li>
-        <li><%= link_to('Mettre en location', new_car_path)  %></li>
-        <li><%= link_to('Vos voitures', allmycars_path)  %></li>
-      </ul>
-    </nav>
-    <% if current_user == nil %>
-      <%= link_to "Login", new_user_session_path , class: "btn-login"%>
-    <% else %>
-      <%= link_to "Log-Out", destroy_user_session_path , method: :delete, class: "btn-login"%>
-    <% end %>
-  </header>
-
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1529638399812-21aa61f8b2da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)";>
