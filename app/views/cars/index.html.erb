@@ -12,8 +12,8 @@
         <% end %>
           <div class="card-trip-infos">
             <div>
-              <h2><%= car.brand %></h2>
-              <p><%= car.details %>Short description here!</p>
+              <h2><%= "#{car.brand} #{car.model}" %></h2>
+              <p><%= car.details %></p>
             </div>
             <h2 class="card-trip-pricing"><%= car.price_per_day %>€/day</h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
