@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy]
   get 'allmycars', to: 'cars#mycars'
+
   get 'allmybookings', to: 'bookings#my_bookings'
-  get 'allmycars', to: 'cars#mycars'
+  patch 'bookings/:id/accept', to: 'bookings#accept'
+  patch 'bookings/:id/decline', to: 'bookings#decline'
 end
