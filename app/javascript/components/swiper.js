@@ -14,7 +14,7 @@ const initSwiper = () => {
       spaceBetween: 30,
       loop: true,
       autoplay: {
-        delay: 80000000,
+        delay: 2500,
         disableOnInteraction: false,
       },
       pagination: {
