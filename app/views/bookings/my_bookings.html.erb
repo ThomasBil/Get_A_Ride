@@ -1,0 +1,12 @@
+<h1>work</h1>
+
+<% @bookings_i_want.each do |booking| %>
+  <p><%= booking.car.brand %> <%= link_to "Destroy", booking_path(booking), method: :delete %></p>
+<% end %>
+
+
+<% @my_cars.each do |car| %>
+ <% car.bookings.each do |booking| %>
+  <p><%= booking.user.name %> <%= booking.status %> <%= link_to "Accept", accept_path(booking), method: :patch %> <%= link_to "Decline", decline_path(booking), method: :patch %></p>
+ <% end %>
+<% end %>

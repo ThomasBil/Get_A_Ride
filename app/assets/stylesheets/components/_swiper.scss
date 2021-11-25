@@ -54,3 +54,18 @@
     font-size: 22px;
   }
 }
+
+
+.swiper-button-next {
+  color: #E94759 !important;
+  margin-right: 15px;
+}
+
+.swiper-button-prev {
+  color: #E94759 !important;
+  margin-left: 15px;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #E94759 !important;
+}

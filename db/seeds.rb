@@ -32,3 +32,5 @@ car_3.user = thomas
 car_3.save!
 
 puts "#{Car.count} cars created"
+
+
