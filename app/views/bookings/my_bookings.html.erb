@@ -30,18 +30,22 @@
   <div class="container_my_car">
     <h2>Mes voitures en location 💲 </h2>
     <div class="cards_my_cars">
-        <div class="layout_my_cars">
-          <% @my_cars.each do |car| %>
-            <% if car.bookings != [] %>
-              <% car.bookings.each do |booking| %>
-              <div class="my_cars <% if booking.status == "Accept"%>car-accepted <% elsif booking.status == "Decline"%>car-declined <%end%>">
-                <%= cl_image_tag car.photos[0].key, crop: :fill %>
-                <%= link_to car.brand, car_path(car), class: "link_to" %>
-              </div>
-                <p class="demand"><%= booking.user.name %> <%= booking.status %> <%= link_to "Accept", accept_path(booking), method: :patch, class:"btn_booking" %><%= link_to "Decline", decline_path(booking), method: :patch, class:"btn_booking" %></p>
+      <% @my_cars.each do |car| %>
+        <% if car.bookings != [] %>
+          <% car.bookings.each do |booking| %>
+          <div>
+            <div class="my_cars <% if booking.status == "Accept"%>car-accepted <% elsif booking.status == "Decline"%>car-declined <%end%>">
+              <%= cl_image_tag car.photos[0].key, crop: :fill %>
+              <%= link_to car.brand, car_path(car), class: "link_to" %>
+            </div>
+            <div>
+              <p class="demand"><%= booking.user.name %> <%= booking.status %> <%= link_to "Accept", accept_path(booking), method: :patch, class:"btn_booking" %><%= link_to "Decline", decline_path(booking), method: :patch, class:"btn_booking" %></p>
+            </div>
+          </div>
               <% end %>
             <% end %>
           <% end %>
+        <div class="layout_my_cars">
         </div>
     </div>
   </div>
