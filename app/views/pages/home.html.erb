@@ -1,4 +1,7 @@
 <div class="banner">
+<% if user != nil %>
+<h1 class="title-index">BONJOUR <%= @user.name.upcase %></h1>
+<% end %>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images5.alphacoders.com/497/thumb-1920-497825.jpg)";>
