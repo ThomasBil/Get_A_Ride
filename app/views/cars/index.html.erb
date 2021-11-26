@@ -4,7 +4,7 @@
 <div class="container mt-5">
   <div class="cards">
   <% @cars.each do |car| %>
-      <%= link_to car_path(car), class:"link_to" do %>
+   <%= link_to car_path(car), class:"link_to" do %>
       <div class="card-trip">
         <% if car.photos[0] != nil %>
           <%= cl_image_tag car.photos[0].key, height: 300, width: 400, crop: :fill %>
@@ -18,9 +18,7 @@
             <img src="https://www.ongconseil.be/wp-content/uploads/2018/03/fg-avatar-anonymous-user-retina.png" class="card-trip-user avatar" />
           </div>
       </div>
-      <% end  %>
     <% end %>
+  <% end %>
   </div>
-
-
 </div>
