@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Car.destroy_all if Rails.env.development?
+Car.destroy_all 
 puts "all cars destroy"
-User.destroy_all if Rails.env.development?
+User.destroy_all
 puts "all users destroy"
-Booking.destroy_all if Rails.env.development?
+Booking.destroy_all
 puts "all Bookings destroy"
 
 
