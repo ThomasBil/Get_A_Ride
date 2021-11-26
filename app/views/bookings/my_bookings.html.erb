@@ -48,7 +48,8 @@
           <% @my_cars.each do |car| %>
             <% if car.bookings != [] %>
               <% car.bookings.each do |booking| %>
-              <div class="my_cars" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+              <div class="my_cars">
+                <%= cl_image_tag car.photos[0].key, crop: :fill %>
                 <%= link_to car.brand, car_path(car), class: "link_to" %>
               </div>
                 <p><%= booking.user.name %> <%= booking.status %> <%= link_to "Accept", accept_path(booking), method: :patch, class:"btn_booking" %><%= link_to "Decline", decline_path(booking), method: :patch, class:"btn_booking" %></p>
