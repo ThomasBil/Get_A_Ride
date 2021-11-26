@@ -1,12 +1,77 @@
 <h1>work</h1>
 
-<% @bookings_i_want.each do |booking| %>
-  <p><%= "#{booking.car.brand} #{booking.car.model}" %> <%= link_to "Cancel", booking_path(booking), method: :delete %></p>
-<% end %>
 
+<div class="container_my_cars">
 
-<% @my_cars.each do |car| %>
- <% car.bookings.each do |booking| %>
-  <p><%= booking.user.name %> <%= booking.status %> <%= link_to "Accept", accept_path(booking), method: :patch %> <%= link_to "Decline", decline_path(booking), method: :patch %></p>
- <% end %>
-<% end %>
+  <div class="container_my_car">
+
+    <h2>Mes demandes de location ❤️ </h2>
+
+    <div class="cards_my_cars">
+
+      <div class="item my_cars" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)">
+        <div class="item-text">
+          <div class="item-text-wrapper">
+            <p class="item-text-dek">Volkswagen</p>
+            <h2 class="item-text-title">Du 17/12/2012 au 27/12/2021</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="item my_cars" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://vistapointe.net/images/delorean-8.jpg)">
+        <div class="item-text">
+          <div class="item-text-wrapper">
+            <p class="item-text-dek">DMC</p>
+            <h2 class="item-text-title">Du 31/12/2021 au 02/01/2021</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="item my_cars" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1629897152322-258806506f68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80)">
+        <div class="item-text">
+          <div class="item-text-wrapper">
+            <p class="item-text-dek">Volvo</p>
+            <h2 class="item-text-title">Du 12/02/2021 au 19/02/2021</h2>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container_my_cars">
+
+  <div class="container_my_car">
+
+    <h2>Mes voitures en location 💲 </h2>
+
+    <div class="cards_my_cars">
+
+      <% @my_cars.each do |car| %>
+
+      <div class="layout_my_cars">
+
+        <div class="my_cars" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= link_to car.brand, car_path(car), class: "link_to" %>
+        </div>
+
+        <div class="layout_btn">
+          <% @bookings_i_want.each do |booking| %>
+            <p><%= "#{booking.car.brand} #{booking.car.model}" %> <%= link_to "Cancel", booking_path(booking), method: :delete, class:"btn_booking" %></p>
+          <% end %>
+
+          <% @my_cars.each do |car| %>
+          <% car.bookings.each do |booking| %>
+            <p><%= booking.user.name %> <%= booking.status %> <%= link_to "Accept", accept_path(booking), method: :patch, class:"btn_booking" %> <%= link_to "Decline", decline_path(booking), method: :patch, class:"btn_booking" %></p>
+          <% end %>
+          <% end %>
+        </div>
+
+      </div>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
