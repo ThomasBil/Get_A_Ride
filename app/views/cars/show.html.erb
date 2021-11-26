@@ -1,45 +1,28 @@
-<div class="main_container">
-  <div class= "galery_pictures">
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";>
-            <div class="swiper-slide-content">
-              <h1><%= "#{@car.brand} #{@car.model}" %></h1>
-              <a href="#" class="btn-shop">Louer</a>
-            </div>
-          </div>
-          <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://www.turbo.fr/sites/default/files/styles/article_690x405/public/2019-03/voiture-occasion-verification-int%C3%A9rieur.png?itok=WRPkDjfN)";>
-            <div class="swiper-slide-content">
-            </div>
-          </div>
+<div class="banner" style="height: 100vh;">
+  <div class="swiper myFlipSwiper" style="width: 50vw; height: 40vh;">
+    <div class="swiper-wrapper">
+      <% @car.photos.each do |photo| %>
+        <div class="swiper-slide">
+          <%= cl_image_tag photo.key, crop: :fill %>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+      <% end %>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
 
-
-  <div class="description">
-    <h2 class="fw-bold">Brand of the car</h2>
-      <h3 class="fs-3 fw-light"><%= @car.brand %></h3>
-    <h2 class="fw-bold">Model of the car</h2>
-      <h3 class="fs-3 fw-light"><%= @car.model %></h3>
-    <h2 class="fw-bold">Price of the rent</h2>
-      <h3 class="fs- fw-light"><%= @car.price_per_day %> € /day</h3>
-    <h2 class="fw-bold">Localisation</h2>
-      <h3 class="fs-3 fw-light"><%= @car.localisation %></h3>
-    <h2 class="fw-bold">Immatriculation</h2>
-      <h3 class="fs-3 fw-light"><%= @car.immatriculation %></h3>
-    <h2 class="fw-bold">Détails</h2>
-      <h3 class="fs-3 fw-light"><%= @car.details %></h3>
+  <div class="custom-container" >
+    <h2><%= "#{@car.brand} #{@car.model}" %></h2>
+    <p><%= @car.details %></p>
+    <ul class="ul-style">
+      <li><i class="fas fa-map"></i> <%= @car.localisation %></li>
+      <li><i class="fas fa-car-side"></i> <%= @car.immatriculation %></li>
+      <li><i class="fas fa-euro-sign"></i> <%= @car.price_per_day %></li>
+    </ul>
   </div>
-
-  <div class="calendar">
-  <img src="https://icalendrier.fr/media/imprimer/2021/mensuel/decembre/calendrier-decembre-2021.png" alt="calendrier">
-  </div>
-
 </div>
+
 
 
 <% if current_user != nil %>
@@ -47,7 +30,6 @@
     <td><%= link_to('Edit', edit_car_path(@car)) %></td>
     <td><%= link_to('Destroy', car_path, method: :delete, data: { confirm: 'Are you sure?' }) %></td>
   <% end %>
-  <td><%= link_to('Reserve this car', new_car_booking_path(@car)) %></td>
 <% end %>
 
 

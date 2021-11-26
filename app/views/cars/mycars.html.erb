@@ -51,10 +51,11 @@
         <%= link_to(car.brand, car_path(car)) %>
       </div>
 
+          <%= cl_image_tag car.photos[0].key, height: 300, width: 400, crop: :fill %>
+
      <% end %>
 
     </div>
 
   </div>
 </div>
-
