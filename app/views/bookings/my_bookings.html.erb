@@ -32,7 +32,7 @@
           <% @my_cars.each do |car| %>
             <% if car.bookings != [] %>
               <% car.bookings.each do |booking| %>
-              <div class="my_cars">
+              <div class="my_cars <% if booking.status == "Accept"%>car-accepted <% elsif booking.status == "Decline"%>car-declined <%end%>">
                 <%= cl_image_tag car.photos[0].key, crop: :fill %>
                 <%= link_to car.brand, car_path(car), class: "link_to" %>
               </div>
