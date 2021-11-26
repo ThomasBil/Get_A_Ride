@@ -11,14 +11,16 @@
 
     <% @bookings_i_want.each do |booking| %>
       <div class="item my_cars">
-      <%= cl_image_tag booking.car.photos[0].key, crop: :fill %>
-        <div class="item-text">
-          <div class="item-text-wrapper">
-            <p class="item-text-dek"><%= "#{booking.car.brand} #{booking.car.model}" %></p>
-            <h2 class="item-text-title"><%= "Du #{booking.start_date} au #{booking.end_date}" %></h2>
+      <%= link_to car_path(booking.car), class:"link_to" do %>
+        <%= cl_image_tag booking.car.photos[0].key, crop: :fill %>
+          <div class="item-text">
+            <div class="item-text-wrapper">
+              <p class="item-text-dek"><%= "#{booking.car.brand} #{booking.car.model}" %></p>
+              <h2 class="item-text-title"><%= "Du #{booking.start_date} au #{booking.end_date}" %></h2>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
     </div>
   </div>
