@@ -2,7 +2,8 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show ]
 
   def index
-    @cars = Car.all
+    # @cars = Car.where(user: !current_user) ?
+    @cars = Car.where.not(user: current_user)
   end
 
   def show
