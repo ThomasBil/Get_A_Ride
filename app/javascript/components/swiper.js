@@ -1,9 +1,9 @@
-import Swiper, { Autoplay, EffectFlip, Navigation, Pagination } from 'swiper';
+import Swiper, { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
 
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-import 'swiper/components/effect-flip/effect-flip.min.css';
+import 'swiper/components/effect-fade/effect-fade.min.css';
 
 
 
@@ -34,10 +34,10 @@ const initSwiper = () => {
 
 const initSwiperFlip = () => {
   if (document.querySelector(".myFlipSwiper")) {
-    Swiper.use([Navigation, Pagination, EffectFlip]);
+    Swiper.use([Navigation, Pagination, EffectFade]);
     const flipSwiper = new Swiper(".myFlipSwiper", {
-      effect: "flip",
-      grabCursor: true,
+      spaceBetween: 30,
+      effect: "fade",
       loop: true,
       pagination: {
         el: ".swiper-pagination",
