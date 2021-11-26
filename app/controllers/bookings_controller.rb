@@ -12,11 +12,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def new
-    @car = Car.find(params[:car_id])
-    @booking = Booking.new
-  end
-
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
