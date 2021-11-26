@@ -1,10 +1,4 @@
-.main_container {
-  margin : 35px 20px 0px 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
+
 
 
 .description {
@@ -17,43 +11,22 @@
   margin-top: 50px;
 }
 
-
-.galery_pictures {
-  grid-column: 1;
-  grid-row: 1/2;
-  height: 450px;
+.show_layout {
   display: grid;
-  grid-gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
-.calendar {
-  grid-column: 1/2;
-  grid-row: 2/5;
-  background-color: rgb(146, 146, 146);
-}
-
-.item img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.custom-container {
+  background-color: white;
   border-radius: 4px;
+  box-shadow: 6px 4px 15px 3px rgba(105,105,105,0.91);
+  width: 370px;
+  height: 250px;
+  grid-column: 2;
 }
 
-
-.description > h2 {
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.description > h3 {
-  font-weight: lighter;
-  font-size: 20px;
-  text-align: justify;
-}
-
-.calendar img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 4px;
+.simple_form {
+  grid-column: 3;
 }
