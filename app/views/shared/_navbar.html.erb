@@ -5,11 +5,12 @@
         <li><%= link_to('Louer', cars_path) %></li>
         <% if current_user != nil %>
           <li><%= link_to('Mettre en location', new_car_path)  %></li>
-          <li><%= link_to('Vos Réservations', allmybookings_path)  %></li>
+          <li><%= link_to('Mes Voitures', allmycars_path)  %></li>
+          <li><%= link_to('Mes Réservations', allmybookings_path)  %></li>
         <% else %>
         <li><%= link_to('Devenir membre', new_user_registration_path)  %> </li>
         <% end %>
-      </ul> 
+      </ul>
     </nav>
     <% if current_user == nil %>
       <%= link_to "Login", new_user_session_path , class: "btn-login"%>
