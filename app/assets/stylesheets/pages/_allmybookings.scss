@@ -13,6 +13,7 @@
   color: white;
   border-radius: 5px;
   padding: 10px;
+  margin: 3px;
   &:hover {
     color: #a03741;
     text-decoration: none;
@@ -21,4 +22,11 @@
 
 .layout_btn {
   margin-top: 15px;
+}
+
+
+.demand {
+  margin-top: 15px;
+  background-color: white;
+  padding: 20px;
 }
