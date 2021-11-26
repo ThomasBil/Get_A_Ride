@@ -3,7 +3,7 @@ class CarsController < ApplicationController
 
   def index
     # @cars = Car.where(user: !current_user) ?
-    @cars = Car.all
+    @cars = Car.where.not(user: current_user)
   end
 
   def show
