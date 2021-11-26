@@ -28,7 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { scroll } from '../components/navbar';
-import { initSwiper } from '../components/swiper'
+import { initSwiper, initSwiperFlip } from '../components/swiper'
 import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
@@ -36,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   scroll();
   initSwiper();
+  initSwiperFlip();
   initFlatpickr();
 });
