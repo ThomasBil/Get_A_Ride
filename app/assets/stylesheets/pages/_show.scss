@@ -32,9 +32,19 @@
   grid-column: 3;
 }
 
-.btn.btn-danger {
+.btn_destroy > a {
   position: absolute;
   right: 1px;
+  background-color: #E94759;
+  color: white;
+  text-decoration: none;
+  padding: 10px ​50px;
+  padding: 10px 50px;
+  border-radius: 8px;
+  &:hover {
+    color: #a03741;
+    text-decoration: none;
+  }
 }
 
 .container {
