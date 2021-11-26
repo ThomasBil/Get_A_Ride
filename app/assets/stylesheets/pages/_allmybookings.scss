@@ -1,6 +1,7 @@
 .link_to {
   color: white;
   text-decoration: none;
+  position: absolute;
   &:hover {
     color: #DB5461;
     text-decoration: none;
@@ -29,4 +30,13 @@
   margin-top: 15px;
   background-color: white;
   padding: 20px;
+}
+
+
+.title-show {
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 28px;
+    color: black;
+    letter-spacing: 2px;
 }
